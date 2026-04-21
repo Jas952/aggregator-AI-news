@@ -1,0 +1,28 @@
+name: aishny_site
+
+services:
+    app:
+      build: .
+      ports:
+        - "3000:3000"
+        - "8000:8000"
+        - "8001:8001"
+      env_file:
+        - .env
+      environment:
+        SELENIUM_REMOTE_URL: http://selenium:4444/wd/hub
+        NODE_TLS_REJECT_UNAUTHORIZED: "0"
+      dns:
+        - 8.8.8.8
+        - 8.8.4.4
+      volumes:
+        - ./data:/app/data
+        - ./etc:/app/etc
+      depends_on:
+        - selenium
+    
+    selenium:
+      image: selenium/standalone-chromium:latest
+      shm_size: "2gb"
+      ports:
+        - "4444:4444"

@@ -1,0 +1,22 @@
+{
+  "name": "tst_site",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "concurrently -k -n site,rss,refresh,monitor -c \"cyan,magenta,green,yellow\" \"node services/server.js\" \"node services/rss-server.js\" \"node services/auto-refresh.js\" \"python3 -u services/log-monitor.py\"",
+    "site": "node services/server.js",
+    "rss": "node services/rss-server.js",
+    "refresh": "node services/auto-refresh.js",
+    "refresh:now": "node services/auto-refresh.js --force-once",
+    "monitor": "python3 -u services/log-monitor.py",
+    "parse:telegram": "python3 parsers/parsing_telegram.py",
+    "parse:midjourney": "node parsers/midjourney-scraper.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

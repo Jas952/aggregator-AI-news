@@ -1,0 +1,63 @@
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Telegram sessions / auth state
+tg/telegram.session
+etc/parsing_tg.session
+etc/parsing_tg.session-journal
+*.session
+*.session-*
+cookies.txt
+auth.json
+
+# Dependencies
+node_modules/
+
+# Logs / temp
+*.log
+logs/
+tmp/
+temp/
+
+# macOS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Archive
+archive/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Claude Code
+.claude/
+
+# Generated data
+data/tg/*.json
+data/my-source-jsons/*.json
+data/news-aggregator-jsons/*.json
+data/midjourney/midjourney.json
+data/midjourney/images/*.png
+data/user-suggestions/*.json
+!data/user-suggestions/.gitkeep
+
+# Legacy generated artifacts from older project layout
+jsons/*.json
+my-source-jsons/*.json
+news-aggregator-jsons/*.json
+rss-test-report.json
+server.log
+
+# Runtime state
+etc/time.json
