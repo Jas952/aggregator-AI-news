@@ -36,6 +36,7 @@ Main content blocks:
 ## Project Structure
 
 <img src="./assets-github/telegram-titlebar.svg" alt="Project Structure title bar" />
+
 ```text
 aishny_site/
 ├── assets/                  # static assets and demo media
