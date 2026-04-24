@@ -62,4 +62,3 @@ server.log
 # Runtime state
 etc/time.json
 
-/assets-github/
